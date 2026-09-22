@@ -43,13 +43,20 @@ Built a user-centric web platform engineered to simplify the job-hunting process
 
 
 
+
 ### 📁 Project files explained:
 
 
-├── Admin_Pages/       # Administrative user interface and management pages
-├── HR_Pages/          # HR staff user interface (vacancy management & review)
-├── Images/            # Visual assets, branding components, and custom logo
-├── CVs/               # Storage directory for applicant-uploaded resumes
-├── shimaa11818.bak    # Database backup file created in SQL Server (SSMS)
-└── other files          # Applicant portal interface, public job browsing, and navigation pages
+1.  Admin_Pages/       # Administrative user interface 
+
+2.  HR_Pages/          # HR staff user interface (vacancy management & review)
+
+3.  Images/            # Visual assets, branding components, and custom logo
+
+4.  CVs/               # Storage directory for applicant-uploaded resumes
+
+5. shimaa11818.bak    # Database backup file created in SQL Server (SSMS)
+
+6. Other files          # Applicant portal interface, public job browsing, and navigation pages
+
 
