@@ -1,0 +1,157 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="shimaa11818WebApp.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HR System</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" runat="server" />
+
+</head>
+
+<body runat="server">
+
+    <form id="form1" runat="server">
+
+        <!-- ScriptManager -->
+        <asp:ScriptManager runat="server" />
+
+        <!-- HEADER -->
+        <header class="mb-4">
+            <div class="d-flex justify-content-between align-items-center px-4 pt-3">
+
+                <!-- Logo -->
+              
+    <img src="~/Images/Hr logo 2.png" alt="HR logo" height="250" class="logo2" runat="server" />
+                <!-- Navigation -->
+                <nav class="nav">
+
+    
+
+                    <!-- Applicant -->
+                    <asp:LoginView runat="server">
+                        <RoleGroups>
+                            <asp:RoleGroup Roles="user">
+                                <ContentTemplate>
+                                    <a class="nav-link fs-3   d-inline nav-glow" href="apply.aspx" runat="server">Apply</a>
+                                        <a class="nav-link fs-3   d-inline nav-glow" href="accountInfo.aspx" runat="server">My Account</a>
+                                        <a class="nav-link fs-3   d-inline nav-glow" href="editAccount.aspx" runat="server">edit Account Info</a> 
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                        </RoleGroups>
+                    </asp:LoginView>
+
+                    <!-- HR -->
+                    <asp:LoginView runat="server">
+                        <RoleGroups>
+                            <asp:RoleGroup Roles="HR">
+                                <ContentTemplate>
+                                    <a class="nav-link fs-3   d-inline nav-glow" href="~/HR_Pages/hrHomePage.aspx" runat="server">Home</a>
+                                      <a class="nav-link fs-3   d-inline nav-glow" href="~/HR_Pages/hrApplicants.aspx" runat="server">Show Applicants</a>
+                                      <a class="nav-link fs-3   d-inline nav-glow" href="~/HR_Pages/jobVacancy.aspx" runat="server">Show Job Vacancy</a>
+
+    
+                 
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                        </RoleGroups>
+                    </asp:LoginView>
+
+                    <!-- Admin -->
+                    <asp:LoginView runat="server">
+                        <RoleGroups>
+                            <asp:RoleGroup Roles="admin">
+                                <ContentTemplate>
+                                    <a class="nav-link fs-3   d-inline nav-glow" href="~/Admin_Pages/adHome.aspx" runat="server">Home</a>
+                                     <a class="nav-link fs-3   d-inline nav-glow" href="~/Admin_Pages/adDashboard.aspx" runat="server">System Dashboard</a>
+                                     <a class="nav-link fs-3   d-inline nav-glow" href="~/Admin_Pages/adManageRoles.aspx" runat="server">Manage Roles</a>
+           
+
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                        </RoleGroups>
+                    </asp:LoginView>
+
+                    <!-- Login -->
+                    <asp:LoginView runat="server">
+                        <AnonymousTemplate>
+                            <a class="nav-link fs-3   d-inline nav-glow" href="~/login.aspx" runat="server">Login</a>
+                        </AnonymousTemplate>
+
+                        <LoggedInTemplate>
+                           <asp:LoginStatus 
+               runat="server"
+                 LogoutAction="Redirect"
+             LogoutPageUrl="~/login.aspx"
+                               Cssclass="nav-link fs-3  d-inline  nav-glow" style =" color: white;" />
+
+                            
+                        </LoggedInTemplate>
+
+
+                    </asp:LoginView>
+
+
+                    <!-- NAVIGATION (role-based) -->
+<nav class="nav">
+
+    <!-- Applicant -->
+    <asp:LoginView runat="server">
+        <RoleGroups>
+            <asp:RoleGroup Roles="user">
+                <ContentTemplate>
+                    <a href="home.aspx" runat="server"></a>
+                </ContentTemplate>
+            </asp:RoleGroup>
+        </RoleGroups>
+    </asp:LoginView>
+
+    <!-- HR -->
+    <asp:LoginView runat="server">
+        <RoleGroups>
+            <asp:RoleGroup Roles="HR">
+                <ContentTemplate>
+                    <a href="~/HR_Pages/HrHomePage.aspx" runat="server"></a>
+                </ContentTemplate>
+            </asp:RoleGroup>
+        </RoleGroups>
+    </asp:LoginView>
+
+
+       <asp:LoginView runat="server">
+        <RoleGroups>
+            <asp:RoleGroup Roles="admin">
+                <ContentTemplate>
+                    <a href="~/Admin_Pages/adHome.aspx" runat="server"></a>
+                </ContentTemplate>
+            </asp:RoleGroup>
+        </RoleGroups>
+    </asp:LoginView>
+
+
+</nav>
+
+
+
+          
+
+                </nav>
+            </div>
+        </header>
+
+      <!-- PAGE CONTENT -->
+       <div class="container mt-5">
+            <asp:ContentPlaceHolder ID="MainContent"  runat="server" />
+        </div>
+
+    </form>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
